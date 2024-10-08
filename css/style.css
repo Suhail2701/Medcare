@@ -1,0 +1,978 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,300&display=swap');
+
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+
+html
+{
+    font-size: 62.5%;
+    /* overflow: hidden; */
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+body{
+    background: #eee;
+}
+/* #74d12b; */
+
+
+/* css code for banner */
+.section
+{
+ padding: 2rem 9%;
+}
+
+.heading
+{
+    text-align: center;
+    padding: 3rem 0;
+    padding-bottom: 3rem;
+    font-size: 3.5rem;
+    color: black;
+}
+
+.heading span
+{
+    background-color: green;
+    color: #fff;
+    padding: .5rem 3rem;
+    display: inline-block;
+    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+
+.btn
+{
+    border: .2rem solid #f0d43a;
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    padding: .8rem 3rem;
+    border-radius: .5rem;
+    color:black;
+    background: #f0d43a;
+}
+
+.btn:hover
+{
+    background: #fff;
+}
+
+.header
+{   
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index: 1000;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    background:#fff;
+    box-shadow: 10px 0 10px 0 rgb(72, 72, 72);
+}
+
+.header .logo
+{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    text-decoration: none;
+    color: green;
+}
+
+.header .logo:hover
+{
+    color:#f0d43a;
+}
+
+
+.header .navbar a
+{
+    font-size: 1.7rem;
+    margin: 0 1rem;
+    color:black;
+    text-decoration: none;
+}
+
+.header .navbar a:hover 
+{
+    color:#f0d43a;
+    color: white;
+}
+
+.header .icon div
+{   
+    height:4.5rem;
+    width:4.5rem;
+    border-radius: .5rem;
+    line-height: 4.5rem;
+    margin-right: .3rem;
+    font-size: 2rem;
+    text-align: center;
+    background-color: #c4c3c3;
+    cursor: pointer;
+}
+
+.header .icon div:hover
+{
+    background-color: green;
+    color:#f0d43a;
+}
+
+#menu-btn
+{
+    display: none;
+}
+
+.header .search-form
+{
+    border: 0px solid;
+    position:absolute;
+    top:110%;
+    right:-100%;
+    width:50rem;
+    height:5rem;
+    border-radius: .5rem;
+    background-color: #fff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: 10px 0 10px 0 rgb(72, 72, 72);
+    z-index: 2;
+}
+
+.header .search-form.active
+{
+    right: 2rem;
+    transition: .3s linear;
+}
+
+.header .search-form input
+{
+    height:100%;
+    width: 100%;
+    background: none;
+    text-transform: none;
+    font-size: 1.6rem;
+    color: black;
+    padding: 0 1.5rem;
+}
+
+.header .search-form label
+{
+    padding: 0 1.5rem;
+    font-size: 2.5rem;
+    color: black;
+    cursor: pointer;
+}
+
+.header .search-form label:hover
+{
+    color: #f0d43a;
+}
+
+.header .login-form
+{   
+    width:35rem;
+    border: 0px solid;
+    position: absolute;
+    top:110%;
+    right: -110%;
+    box-shadow: 10px 0 10px 0 rgb(72, 72, 72);
+    padding: 2rem;
+    border-radius: .5rem;
+    background: #fff;
+    text-align: center;
+}
+
+.header .login-form.active 
+{
+    right: 2rem;
+    transition: .4s linear;
+}
+
+.header .login-form h3
+{
+ font-size: 2.5rem;
+ color: black;
+}
+
+.header .login-form .box
+{
+ border: 0px solid;
+ margin: .7rem 0;
+ width: 100%;
+ border-radius: .5rem;
+ padding: 1rem;
+ font-size: 1.6rem;
+ color: black;
+ text-transform: none;
+ background: #eee;
+}
+
+.header .login-form p
+{
+    font-size: 1.4rem;
+    padding: .5rem 0;
+    color: black;
+}
+
+.header .login-form p a
+{
+    font-size: 1.4rem;
+    padding: .5rem 0;
+}
+
+.header .login-form p a:hover 
+{
+    color: green;
+}
+
+.home
+{   
+    border: 0px solid;
+    display: flex;
+    justify-content: center;
+    background: url(../images/banner1.jpg) no-repeat;
+    background-position:center;
+    background-size:cover;
+    padding-top: 17rem;
+    padding-bottom: 17rem;
+}
+
+.home .content
+{   
+    border:0px solid;
+    text-align: center;
+    width:90rem;
+    height: 20rem;
+}
+
+.home .content h3
+{
+    color: black;
+    font-size: 4rem;
+}
+
+.home .content h3 span
+{
+    color: green;
+    
+}
+
+.home .content p
+{
+    color: black;
+    font-size: 1.7rem;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+/* Features start */
+
+.features .box-container .box img
+{
+    height: 20rem;
+    width: 20rem;
+}
+
+.features .box-container
+{
+    border:0px solid;
+    margin:0 10rem;
+    /* padding: 0 0 0 23rem; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:2rem;
+    padding: 3rem 0;
+}
+
+.features .box-container .box
+{
+    border: 1px solid #f0d43a;
+    padding: 3rem 2rem;
+    background: #fff;
+    text-align: center;
+    box-shadow: 10px 0 10px 0 rgb(72, 72, 72);
+
+}
+
+.features .box-container .box:hover
+{
+    box-shadow: 10px 0 7px 0 green;
+    background: #d3d3d3;
+    border: 1px solid black;
+}
+
+.features .box-container .box h3
+{
+    font-size: 2.5rem;
+    line-height: 1.8;
+    color: black;
+}
+
+.features .box-container .box p
+{
+    font-size: 1.7rem;
+    padding: 1rem 0;
+}
+
+/* Features end */
+
+
+
+
+/* Product section start */
+.products .product-slider .swiper-wrapper .box img
+{
+    height: 20rem;
+    width: 20rem;
+}
+
+.products .product-slider
+{
+    border:0px solid;
+    margin:4rem 10rem;
+}
+
+.products .product-slider:first-child
+{
+    margin-bottom: 2rem;
+}
+
+.products .product-slider .box
+{
+    border:0px solid red;
+    background: #fff;
+    border-radius: .5rem;
+    text-align: center;
+    padding: 3rem 2rem;
+    box-shadow: 10px 0 10px 0 rgb(72, 72, 72);
+    transition: .2s linear;
+    border: 1px solid #f0d43a;
+}
+
+.products .product-slider .box:hover
+{
+    box-shadow: 10px 0 7px 0 green;
+    background: #d3d3d3;
+    border: 1px solid black;
+}
+
+.products .product-slider .box h1
+{
+  font-size: 2.5rem;
+  color: black;
+  padding: 1.5rem 0;
+}
+
+.products .product-slider .box .price 
+{
+    font-size: 2rem;
+    color: black;
+    padding-top: .5rem 0;
+}
+
+.products .product-slider .box .stars i
+{
+   font-size: 1.7rem;
+   color: orange;
+   padding: .5rem 0;
+}
+
+/* Product section end */
+
+
+
+/* our Categories section start  */
+.categories .box-container .box img
+{
+    height: 20rem;
+    width: 20rem;
+}
+
+.categories .box-container
+{
+    border:0px solid;
+    margin:0 10rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:2rem;
+    padding: 3rem 0;
+    padding-left: 0rem;
+}
+
+.categories .box-container .box
+{
+    border:1px solid #f0d43a;
+    padding: 3rem 0;
+    background: #fff;
+    border-radius: .5rem;
+    box-shadow: 10px 0 10px 0 rgb(72, 72, 72);
+    text-align: center;
+}
+
+.categories .box-container .box:hover
+{
+    box-shadow: 10px 0 7px 0 green;
+    background: #d3d3d3;
+    border: 1px solid black; 
+}
+
+.categories .box-container .box h3
+{
+    font-size: 2.5rem;
+    color: black;
+    padding: 1.5rem 0;
+}
+
+.categories .box-container .box p
+{
+    font-size: 2rem;
+    color: black;
+    padding-top: .5rem 0;
+}
+/* our Categories section end  */
+
+
+
+
+
+/* About us start */
+.Aboutus .box-container
+{
+    border: 0px solid;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:2rem;
+    padding: 3rem 0;
+    margin: 0 4rem;
+    box-shadow: 10px 0 10px 0 rgb(72, 72, 72);
+    background: #fff;
+    border-radius: .5rem;
+    border:1px solid #f0d43a;
+}
+
+.Aboutus .box-container .box1
+{
+    border: 0px solid red; 
+    padding: 3rem 10rem;
+    text-align: right;  
+}
+
+.Aboutus .box-container .box2
+{
+    border: 0px solid red; 
+    padding: 3rem 0;
+    text-align: left; 
+    padding-right: 15rem; 
+}
+
+.Aboutus .box-container:hover
+{
+    box-shadow: 10px 0 7px 0 green;
+    background: #d3d3d3;
+    border: 1px solid black; 
+}
+
+.Aboutus .box-container .box2 p
+{
+    font-size: 1.7rem;
+    color: black;
+    padding-top: .5rem 0;
+    padding-right: .7rem;
+}
+
+.Aboutus .box-container .box img
+{
+    padding-left: 0rem;
+}
+/* About us end */
+
+
+
+
+
+
+/* contact us start */
+.contactus .box-container .box img
+{
+    height: 100%;
+    width:100%;
+    padding: 3rem 3rem;
+    
+}
+
+.contactus h1
+{
+    padding-top: 8rem;
+    border: 0px solid;
+}
+.contactus .box-container
+{
+    border: 0px solid;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:2rem;
+    padding: 1rem 0;
+    margin:0 10rem;
+}
+
+.contactus .box-container .box
+{
+    border: 0px solid red;
+    padding: 1rem 3rem;
+    overflow: hidden;
+}
+
+.contactus .box-container .box .c-form
+{
+    border: 0px solid blueviolet;
+    height: 100%;
+    text-align: center;
+    padding: 17rem 5rem;
+}
+
+.contactus .box-container .box .c-form input
+{
+    margin: 2rem 0;
+    width: 100%;
+    height: 5rem;
+    font-size: 2rem;
+    border-radius: .5rem;
+    border: 1px solid;
+    color: black;
+    padding-left: 2rem;
+}
+
+.contactus .box-container .box .c-form .message-box
+{
+    height: 10rem;
+}
+/* contact us end */
+
+
+
+
+
+
+
+
+/* Customers Review start */
+.review .review-slider .swiper-wrapper .box img
+{
+    height: 20rem;
+    width: 20rem;
+    border-radius: 50%;
+}
+
+.review .review-slider
+{
+    border: 0px solid;
+    margin:0 10rem;
+    padding: 1rem;
+}
+
+.review .review-slider .box
+{
+    background: #fff;
+    border-radius: .5rem;
+    text-align: center;
+    padding: 3rem 2rem;
+    box-shadow: 10px 0 10px 0 rgb(72, 72, 72);
+    transition: .2s linear;
+    border: 1px solid #f0d43a;
+}
+
+.review .review-slider .box:hover
+{
+    box-shadow: 10px 0 7px 0 green;
+    background: #d3d3d3;
+    border: 1px solid black;  
+}
+
+.review .review-slider .box p
+{
+    padding: 1rem 0;
+    line-height: 1.8;
+    color: black;
+    font-size: 1.5rem;
+}
+
+.review .review-slider .box h3
+{
+    padding-bottom: .5rem;
+    color: black;
+    font-size: 2.2rem;
+}
+
+.review .review-slider .box .stars i
+{
+    font-size: 1.7rem;
+    color: orange;
+}
+/* Customers Review  end */
+
+
+
+
+/* footer start */
+
+.footer
+{
+    background-color: #fff;
+    padding-left: 5rem;
+    margin-top: 2rem;
+    padding-top: 4rem;
+    box-shadow: 10px 0 10px 0 rgb(72, 72, 72);
+}
+
+.footer .box-container
+{
+    border:0px solid;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    gap:1.5rem;
+
+}
+
+.footer .box-container .box
+{
+    border:0px solid red;
+    text-align: left;
+    padding-left: 7rem;
+}
+
+.footer .box-container .box h3
+{ font-size:2.5rem;
+  color: black;
+  padding: 1rem 0;
+}
+
+.footer .box-container .box h3 i
+{
+  color:green;
+}
+
+.footer .box-container .box .links
+{
+    display: block;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    color: #3b4a6b;
+}
+
+.footer .box-container .box .d-flex a button
+{
+    background-color: #f0d43a;
+    color: #fff;
+    margin-top: 10px;
+    border: #f0d43a;
+    border-radius: 9%;
+    text-align: center;
+    padding: .5rem;
+    font-size: 1.3rem;
+}
+
+.footer .box-container .box .d-flex a button:hover{
+    color:#14202d;
+}
+
+.footer .box-container .box p
+{
+    line-height: 1.8;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+
+.footer .box-container .box .links i
+{
+    padding-right: .5rem;
+}
+
+.footer .box-container .box .links:hover i
+{
+    padding-right: 2rem;
+    color: #f0d43a;
+}
+
+.footer .box-container .box .share a
+{
+    /* border: 1.5px solid rgb(10, 78, 14); */
+    height: 4rem;
+    width:4rem;
+    line-height: 4rem;
+    border-radius: .5rem;
+    font-size: 2rem;
+    color: #3b4a6b;
+    text-decoration: none;
+    text-align: center;
+    background-color: #c4c3c3;
+    cursor: pointer;
+    
+}
+
+.footer .box-container .box .share a:hover
+{
+ color: #f0d43a;
+ background: green;
+}
+
+.footer .box-container .box .email
+{
+    margin: .7rem 0;
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: #c4c3c3;
+    font-size: 1.6rem;
+    text-transform: none;
+}
+
+.footer .credit 
+{
+    text-align: center;
+    margin-top: 1rem;
+    padding: 1rem;
+    /* padding-top: 2.5rem; */
+    font-size: 1.5rem;
+    color: #000000;
+}
+
+.footer .credit span
+{
+    color:green;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.footer .credit .line hr
+{
+    background-color: #626161;
+    width: auto;
+   border: 1px solid #626161;
+   height:1px;
+}
+.footer .credit .line
+{
+    margin-right: 7rem;
+}
+
+.cartFooter
+{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* footer end */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries start*/
+
+@media (max-width: 991px)
+{
+   
+   html
+   {
+    font-size: 55%;
+   } 
+
+   .header
+   {
+    padding: 2rem;
+   }
+
+   .section
+   {
+    padding: 2rem;
+   }
+
+   .Aboutus .box-container .box1
+   {
+    text-align: center;  
+   }
+   .Aboutus .box-container .box2
+   {
+    text-align: center; 
+    padding:3rem 3rem;  
+   }
+
+   .contactus .box-container
+   {
+    border: 0px solid;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:2rem;
+    padding: 3rem 0;
+    margin:0 0rem;
+  }
+
+  .contactus .box-container .box .c-form input
+   {
+    width: 100%;
+    height: 5rem;
+    font-size: 2rem;
+    border-radius: .5rem;
+    border: 1px solid;
+    color: black;
+   }
+
+}
+
+@media (max-width: 768px)
+{   
+    #menu-btn
+    {
+        display: inline-block;
+    }
+
+    .header .search-form
+    {
+        width:90%;
+    }
+    .header .navbar
+    {
+        position:absolute;
+        top:110%;
+        right:-90%;
+        width:30rem;
+        box-shadow: 10px 0 10px 0 rgb(72, 72, 72);
+        border-radius: .5rem;
+        background: #fff;
+    }
+
+    .header .navbar.active 
+    {
+        right: 2rem;
+        transition: .4s linear;
+    }
+    .header .navbar a 
+    {
+        font-size: 2rem;
+        margin:2rem 4rem;
+        display: block;
+        text-align: center;
+    }
+
+    .Aboutus .box-container
+    {
+    padding-right: 0rem;
+    }
+    .Aboutus .box-container .box1
+   {
+    text-align: center;  
+   }
+   .Aboutus .box-container .box2
+   {
+    text-align: center; 
+    padding:3rem 3rem;  
+   }
+
+   .contactus .box-container
+   {
+    border: 0px solid;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:2rem;
+    padding: 3rem 0;
+    margin:0 0rem;
+  }
+
+  .contactus .box-container .box .c-form input
+   {
+    width: 100%;
+    height: 5rem;
+    font-size: 2rem;
+    border-radius: .5rem;
+    border: 1px solid;
+    color: black;
+   }
+}
+
+
+@media (max-width: 450px)
+{
+   
+   html
+   {
+    font-size: 50%;
+   } 
+
+   .heading
+   {
+    font-size: 2.5rem;
+   }
+
+   .Aboutus .box-container
+   {
+    padding-right: 0rem;
+   }
+
+   .Aboutus .box-container .box1
+   {
+    text-align: center;
+    padding: 1rem 1.5rem;
+   }
+   .Aboutus .box-container .box2
+   {
+    text-align: center;
+    padding:3rem 3rem;  
+   }
+
+   .contactus .box-container .box .c-form input
+   {
+    width: 100%;
+    height: 5rem;
+    font-size: 2rem;
+    border-radius: .5rem;
+    border: 1px solid;
+    color: black;
+   }
+   .contactus .box-container .box .c-form
+   {
+    text-align: center;
+    padding: 0rem 0rem;
+   }
+
+   .contactus .box-container
+   {
+    border: 0px solid;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:2rem;
+    padding: 3rem 0;
+    margin:0 0rem;
+  }
+}
+
+
+/* media queries end*/
+
+
+
+

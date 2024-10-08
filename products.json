@@ -1,0 +1,287 @@
+{
+    "total":31,
+    "limit":10,
+    "skip":0,
+    "products": [
+        {
+          "id": 1,
+          "category": "Medicine",
+          "image": "med1",
+          "name": "Paracetamol",
+          "price": 50,
+          "expiry_date": "2025-06-12",
+          "rating": 4.5
+        },
+        {
+          "id": 2,
+          "category": "Medicine",
+          "image": "med2",
+          "name": "Ibuprofen",
+          "price": 120,
+          "expiry_date": "2024-09-18",
+          "rating": 4.3
+        },
+        {
+          "id": 3,
+          "category": "Medicine",
+          "image": "med3",
+          "name": "Aspirin",
+          "price": 80,
+          "expiry_date": "2026-03-27",
+          "rating": 4.0
+        },
+        {
+          "id": 4,
+          "category": "Medicine",
+          "image": "med4",
+          "name": "Amoxicillin",
+          "price": 200,
+          "expiry_date": "2024-11-01",
+          "rating": 4.7
+        },
+        {
+          "id": 5,
+          "category": "Medicine",
+          "image": "med5",
+          "name": "Cetirizine",
+          "price": 60,
+          "expiry_date": "2025-12-15",
+          "rating": 4.1
+        },
+        {
+          "id": 6,
+          "category": "Medicine",
+          "image": "med6",
+          "name": "Ciprofloxacin",
+          "price": 150,
+          "expiry_date": "2023-08-10",
+          "rating": 4.4
+        },
+        {
+          "id": 7,
+          "category": "Medicine",
+          "image": "med7",
+          "name": "Lisinopril",
+          "price": 90,
+          "expiry_date": "2026-01-05",
+          "rating": 4.2
+        },
+        {
+          "id": 8,
+          "category": "Medicine",
+          "image": "med8",
+          "name": "Metformin",
+          "price": 110,
+          "expiry_date": "2025-07-22",
+          "rating": 4.6
+        },
+        {
+          "id": 9,
+          "category": "Medicine",
+          "image": "med9",
+          "name": "Simvastatin",
+          "price": 130,
+          "expiry_date": "2023-12-29",
+          "rating": 4.3
+        },
+        {
+          "id": 10,
+          "category": "Medicine",
+          "image": "med10",
+          "name": "Amlodipine",
+          "price": 95,
+          "expiry_date": "2024-05-19",
+          "rating": 4.0
+        },
+        {
+          "id": 11,
+          "category": "Chocolate",
+          "image": "med11",
+          "name": "Cadbury Dairy Milk",
+          "price": 95,
+          "expiry_date": "2024-05-19",
+          "rating": 4.8
+        },
+        {
+          "id": 12,
+          "category": "Chocolate",
+          "image": "med12",
+          "name": "Ferrero Rocher",
+          "price": 250,
+          "expiry_date": "2025-02-10",
+          "rating": 4.9
+        },
+        {
+          "id": 13,
+          "category": "Chocolate",
+          "image": "med13",
+          "name": "KitKat",
+          "price": 75,
+          "expiry_date": "2024-09-30",
+          "rating": 4.6
+        },
+        {
+          "id": 14,
+          "category": "Chocolate",
+          "image": "med14",
+          "name": "Snickers",
+          "price": 85,
+          "expiry_date": "2024-12-25",
+          "rating": 4.7
+        },
+        {
+          "id": 15,
+          "category": "Chocolate",
+          "image": "med15",
+          "name": "Mars",
+          "price": 100,
+          "expiry_date": "2025-03-15",
+          "rating": 4.4
+        },
+        {
+          "id": 16,
+          "category": "Chocolate",
+          "image": "med16",
+          "name": "Lindt Excellence",
+          "price": 300,
+          "expiry_date": "2024-11-05",
+          "rating": 4.9
+        },
+        {
+          "id": 17,
+          "category": "Chocolate",
+          "image": "med17",
+          "name": "Toblerone",
+          "price": 220,
+          "expiry_date": "2025-06-18",
+          "rating": 4.8
+        },
+        {
+          "id": 18,
+          "category": "Soap",
+          "image": "med18",
+          "name": "Santoor",
+          "price": 220,
+          "expiry_date": "2025-06-18",
+          "rating": 4.3
+        },
+        {
+          "id": 19,
+          "category": "Soap",
+          "image": "med19",
+          "name": "Dove",
+          "price": 180,
+          "expiry_date": "2024-12-05",
+          "rating": 4.7
+        },
+        {
+          "id": 20,
+          "category": "Soap",
+          "image": "med20",
+          "name": "Lux",
+          "price": 150,
+          "expiry_date": "2025-03-25",
+          "rating": 4.5
+        },
+        {
+          "id": 21,
+          "category": "Soap",
+          "image": "med21",
+          "name": "Lifebuoy",
+          "price": 100,
+          "expiry_date": "2024-11-15",
+          "rating": 4.2
+        },
+        {
+          "id": 22,
+          "category": "Soap",
+          "image": "med22",
+          "name": "Pears",
+          "price": 200,
+          "expiry_date": "2025-01-30",
+          "rating": 4.6
+        },
+        {
+          "id": 23,
+          "category": "Soap",
+          "image": "med23",
+          "name": "Cinthol",
+          "price": 190,
+          "expiry_date": "2025-02-28",
+          "rating": 4.4
+        },
+        {
+          "id": 24,
+          "category": "Soap",
+          "image": "med24",
+          "name": "Dettol",
+          "price": 160,
+          "expiry_date": "2024-10-20",
+          "rating": 4.5
+        },
+        {
+          "id": 25,
+          "category": "Syrup",
+          "image": "med25",
+          "name": "Benadryl",
+          "price": 160,
+          "expiry_date": "2024-10-20",
+          "rating": 4.8
+        },
+        {
+          "id": 26,
+          "category": "Syrup",
+          "image": "med26",
+          "name": "Zerodol P",
+          "price": 180,
+          "expiry_date": "2025-01-15",
+          "rating": 4.6
+        },
+        {
+          "id": 27,
+          "category": "Syrup",
+          "image": "med27",
+          "name": "Corex",
+          "price": 120,
+          "expiry_date": "2025-05-05",
+          "rating": 4.5
+        },
+        {
+          "id": 28,
+          "category": "Syrup",
+          "image": "med28",
+          "name": "Ascoril",
+          "price": 150,
+          "expiry_date": "2024-12-30",
+          "rating": 4.7
+        },
+        {
+          "id": 29,
+          "category": "Syrup",
+          "image": "med29",
+          "name": "Chericof",
+          "price": 140,
+          "expiry_date": "2025-03-22",
+          "rating": 4.4
+        },
+        {
+          "id": 30,
+          "category": "Syrup",
+          "image": "med30",
+          "name": "Ambrodil",
+          "price": 170,
+          "expiry_date": "2024-11-11",
+          "rating": 4.5
+        },
+        {
+          "id": 31,
+          "category": "Syrup",
+          "image": "med31",
+          "name": "Grilinctus",
+          "price": 155,
+          "expiry_date": "2025-04-17",
+          "rating": 4.7
+        }
+      ]
+      
+}

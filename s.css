@@ -1,0 +1,198 @@
+
+.p-list .box-container .box img
+{
+    height: 20rem;
+    width: 20rem; 
+    border: 1px solid;
+}
+
+.p-list .box-container
+{
+    border:0px solid;
+    margin:0 10rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:2rem;
+    padding: 3rem 0;
+    padding-left: 2rem;
+    margin-top: 5rem; 
+}
+
+.p-list .box-container .box
+{
+    border:0px solid red;
+    background: #fff;
+    border-radius: .5rem;
+    text-align: center;
+    padding: 3rem 2rem;
+    box-shadow: 10px 0 10px 0 rgb(72, 72, 72);
+    transition: .2s linear;
+    border: 1px solid #f0d43a;
+}
+
+.p-list .box-container .box:hover
+{
+    box-shadow: 10px 0 7px 0 green;
+    background: #d3d3d3;
+    border: 1px solid black;
+}
+
+.p-list .box-container .box h1
+{
+    font-size: 2.5rem;
+    color: black;
+    padding: 1.5rem 0;
+}
+
+.p-list .box-container .box .price
+{
+    font-size: 2rem;
+    color: black;
+    padding-top: .5rem 0;   
+}
+
+.p-list .box-container .box .stars i
+{
+  font-size: 1.7rem;
+   color: orange;
+   padding: .5rem 0;  
+} 
+
+
+
+
+
+
+
+/* sign in page */
+body {
+    background-color: #eee;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .signup-box {
+    width: 360px;
+    height: 620px;
+    margin: auto;
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid;
+    margin-top: 15rem;
+  }
+  
+
+  h1 {
+    text-align: center;
+    padding-top: 15px;
+  }
+  
+  h4 {
+    text-align: center;
+  }
+  
+  form {
+    width: 300px;
+    margin-left: 20px;
+  }
+  
+  form label {
+    display: flex;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 6px;
+    outline: none;
+  }
+  input[type="button"] {
+    width: 320px;
+    height: 35px;
+    margin-top: 20px;
+    border: none;
+    background-color: #49c1a2;
+    color: white;
+    font-size: 18px;
+  }
+  p {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 15px;
+    padding: 1rem 1rem;
+  }
+  .para-2 {
+    text-align: center;
+    color: black;
+    font-size: 15px;
+    margin-top: -10px;
+  }
+  .para-2 a {
+    color: green;
+  }
+  
+
+
+
+  /* Read more */
+  .read 
+  {
+    margin-top: 10rem;
+    border: 0px solid;
+  }
+
+  .read p
+  {
+    margin: 2rem 2rem;
+    text-align: left;
+    font-size: 2rem;
+  }
+  
+
+.pagination
+{
+  text-align: center;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+
+}
+
+.pagination > span
+{
+  border: 1px solid black;
+  padding: 6px;
+  font-size: large;
+  cursor: pointer;
+  
+}
+
+.spanEle
+{
+  padding: 7px;
+}
+
+.spanEle:hover
+{
+  color: green;
+}
+
+.cuurentPage
+{
+  color:green;
+}
+
+.hideSpan
+{
+  display: none;
+}
+
+.displaySpan
+{
+  display: initial;
+}
+
+
