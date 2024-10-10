@@ -56,11 +56,19 @@
 
       <div class="icon">
         <div class="fa-solid fa-bars" id="menu-btn"></div>
+
         <div class="fa-solid fa-magnifying-glass" id="search-btn"></div>
-        <a href="Cart.html" style="color: black;
-        "><div class="fa-solid fa-cart-shopping" id="cart-btn"></div></a>
+
+        <a style="color: black;" class="cartIcn" id="cartbtn">
+          <div class="fa-solid fa-cart-shopping  " id="cart-btn"></div>
+        </a>
+
         <div class="fa-solid fa-user" id="login-btn"></div>
       </div>
+
+      <!-- <div  >
+        <button id="cartbtn" style="font-size: large;" onclick="window.location.href='Cart.html'">Cart</button>
+      </div> -->
 
       <form class="search-form">
           <input type="search" id="search-box" placeholder="Search Here....">
@@ -464,6 +472,7 @@
 <!-- slider end-->
 
 <script src="js/script.js"></script>
+<script src="cart.js"></script>
 </body>
 <script src="https://kit.fontawesome.com/6c5a029cc0.js" crossorigin="anonymous"></script>
 <!-- JavaScript Bundle with Popper -->

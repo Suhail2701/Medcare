@@ -196,3 +196,47 @@ body {
 }
 
 
+
+/* cart */
+
+.cartTotal
+{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 20%;
+  margin: auto;
+  background-color: #f0d43a;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: large;
+}
+
+.cartTotal__item
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+.cartViewContainer
+{
+  display: flex;
+  padding: 0px 10px;
+  justify-content: space-evenly;
+}
+
+.priceAndCount
+{
+  display: flex;
+  justify-content: space-around;
+}
+
+.ratingSize
+{
+  font-size: large;
+}
+
+/* .viewCart
+{
+margin-left: auto ;
+} */

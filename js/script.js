@@ -2,31 +2,31 @@
 
 let searchForm = document.querySelector('.search-form');
 
-// document.querySelector('#search-btn').onclick = () =>
-// {
-//     searchForm.classList.toggle('active');
-//     loginForm.classList.remove('active');
-//     navbar1.classList.remove('active');
-// }
+document.querySelector('#search-btn').onclick = () =>
+{
+    searchForm.classList.toggle('active');
+    loginForm.classList.remove('active');
+    navbar1.classList.remove('active');
+}
 
 
 let loginForm = document.querySelector('.login-form');
 
-// document.querySelector('#login-btn').onclick = () =>
-// {
-//     loginForm.classList.toggle('active');
-//     searchForm.classList.remove('active');
-//     navbar1.classList.remove('active');
-// }
+document.querySelector('#login-btn').onclick = () =>
+{
+    loginForm.classList.toggle('active');
+    searchForm.classList.remove('active');
+    navbar1.classList.remove('active');
+}
 
 let navbar1 = document.querySelector('.navbar');
 
-// document.querySelector('#menu-btn').onclick = () =>
-// {
-//     navbar1.classList.toggle('active');
-//     searchForm.classList.remove('active');
-//     loginForm.classList.remove('active');
-// }
+document.querySelector('#menu-btn').onclick = () =>
+{
+    navbar1.classList.toggle('active');
+    searchForm.classList.remove('active');
+    loginForm.classList.remove('active');
+}
 
 window.onscroll = () =>
 {
@@ -92,7 +92,9 @@ var swiper = new Swiper(".product-slider", {
   const left = document.querySelector(".left");
   const right = document.querySelector(".right");
   const categoryHeading = document.querySelector(".categoryHeading");
-  const cartContainer = document.querySelector(".cart-container");
+  // const cartContainer = document.querySelector(".cart-container");
+  // const cartSelector = document.querySelector(".cartSelector");
+  
 
   let allProducts = null;
   let allData = null;
@@ -137,11 +139,11 @@ var swiper = new Swiper(".product-slider", {
       
     }
 
-    cart();
-
     Pagination();
     // renderProducts();
     setupCategoryFilters();
+    cart();
+  
   }
 
   const renderCategoryProducts = (category) => {
@@ -155,7 +157,7 @@ var swiper = new Swiper(".product-slider", {
         <img src="images/med${p?.id}.jpg" alt="">
         <h1>${p?.name}</h1>
         <div class="price">&#8377; ${p?.price}/-</div>
-        <div class="stars">
+        <div class="stars ratingSize">
          ${p?.rating} <i class="fa-solid fa-star"></i>
         </div>
         <a href="#" class="btn cartListener" data-product-id="${p?.id}" >Add to cart</a>
@@ -163,6 +165,7 @@ var swiper = new Swiper(".product-slider", {
     });
   
     boxContainer.innerHTML = products;
+    cart();
   }
 
   // Add event listeners for category buttons
@@ -197,7 +200,7 @@ const renderProducts = ()=>{
       <img src="images/med${p?.id}.jpg" alt="">
       <h1>${p?.name}</h1>
       <div class="price">&#8377; ${p?.price}/-</div>
-      <div class="stars">
+      <div class="stars ratingSize">
        ${p?.rating} <i class="fa-solid fa-star"></i>
       </div>
       <a href="#" class="btn  cartListener" data-product-id="${p?.id}">Add to cart</a>
@@ -206,11 +209,12 @@ const renderProducts = ()=>{
   });
 
   boxContainer.innerHTML = products;
+
+  cart();
 }
 
 const Pagination = ()=>
 {
-  
   
   console.log(totalPage);
   console.log("totalpages", totalPage);
@@ -251,13 +255,12 @@ const Pagination = ()=>
     right.classList.add("displaySpan");
   }
 
-
-
 }
 
 left.addEventListener('click',()=>handlePagination(page-1));
   
 right.addEventListener('click',()=>handlePagination(page+1));
+
 
 const handleAddToCart = (event)=>{
   
@@ -266,13 +269,44 @@ const handleAddToCart = (event)=>{
   const productId = event.target.getAttribute('data-product-id');
   alert(productId);
   console.log(productId);
-  let cartStorage  = localStorage.getItem('cart')?JSON.parse(localStorage.getItem('cart')):[];
+  let obj = {
+    totalProduct: 0,
+    totalPrice : 0,
+    allItems : [],
+  }
+  let presentItemIndex = null;
+  let cartStorage  = localStorage.getItem('cart')?JSON.parse(localStorage.getItem('cart')):obj;
   console.log("cartStorage", cartStorage);
   let productToCart = allProducts[Number(productId)-1];
   console.log(productToCart);
-  cartStorage.push(productToCart);
+  let itemFlag = false;
+  cartStorage.allItems.map((item, index) => 
+  {
+    if(item.id == productId)
+      {
+        itemFlag = true;
+        presentItemIndex = index;
+      }
+  }
+  )
+
+  if(itemFlag)
+  {
+    cartStorage.allItems[presentItemIndex].count += 1;
+  }
+  else
+  {
+    cartStorage.allItems.push(productToCart);
+  }
+  
   console.log("cartStorage",cartStorage);
+  cartStorage.totalProduct = cartStorage.totalProduct + 1;
+  cartStorage.totalPrice = cartStorage.totalPrice + productToCart?.price;
+  console.log("object",obj);
   localStorage.setItem('cart', JSON.stringify(cartStorage));
+
+  console.log("Local storage get items", JSON.parse(localStorage.getItem('cart')));
+
 }
 
 //cart logic
@@ -280,4 +314,11 @@ const cart =()=>{
   document.querySelectorAll(".cartListener").forEach((item)=>{
     item.addEventListener('click',handleAddToCart);
   })
+
+  // cartSelector.addEventListener('click', renderCartItems);
 }
+
+
+
+
+
