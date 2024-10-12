@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/cart",
-      "destination": "/cart.html"
+      "destination": "/Cart.html"
     }
   ]
 }
