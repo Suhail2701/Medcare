@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // If cart button is found, we're on index.html, set up the click event
     if (cartIcn) {
         cartIcn.addEventListener('click', () => {
-            window.location.href = 'cart.html'; // Redirect to cart.html
+            window.location.href = '/cart.html'; // Redirect to cart.html
         });
     }
 
