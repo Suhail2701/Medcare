@@ -695,6 +695,7 @@ body{
     line-height: 1.8;
     font-size: 1.5rem;
     padding: 1rem 0;
+    text-align: left;
 }
 
 .footer .box-container .box .links i
@@ -842,6 +843,7 @@ body{
     color: black;
    }
 
+
 }
 
 @media (max-width: 768px)
@@ -912,6 +914,12 @@ body{
     border: 1px solid;
     color: black;
    }
+
+   .cartTotal
+  {
+    width: 320px;
+  }
+
 }
 
 
@@ -968,6 +976,14 @@ body{
     padding: 3rem 0;
     margin:0 0rem;
   }
+  
+  .cartTotal
+  {
+    width: 300px;
+  }
+
+  
+
 }
 
 

@@ -2,158 +2,141 @@
 
 let searchForm = document.querySelector('.search-form');
 
-document.querySelector('#search-btn').onclick = () =>
-{
-    searchForm.classList.toggle('active');
-    loginForm.classList.remove('active');
-    navbar1.classList.remove('active');
+document.querySelector('#search-btn').onclick = () => {
+  searchForm.classList.toggle('active');
+  loginForm.classList.remove('active');
+  navbar1.classList.remove('active');
 }
 
 
 let loginForm = document.querySelector('.login-form');
 
-document.querySelector('#login-btn').onclick = () =>
-{
-    loginForm.classList.toggle('active');
-    searchForm.classList.remove('active');
-    navbar1.classList.remove('active');
+document.querySelector('#login-btn').onclick = () => {
+  loginForm.classList.toggle('active');
+  searchForm.classList.remove('active');
+  navbar1.classList.remove('active');
 }
 
 let navbar1 = document.querySelector('.navbar');
 
-document.querySelector('#menu-btn').onclick = () =>
-{
-    navbar1.classList.toggle('active');
-    searchForm.classList.remove('active');
-    loginForm.classList.remove('active');
+document.querySelector('#menu-btn').onclick = () => {
+  navbar1.classList.toggle('active');
+  searchForm.classList.remove('active');
+  loginForm.classList.remove('active');
 }
 
-window.onscroll = () =>
-{
-    searchForm.classList.remove('active');
-    loginForm.classList.remove('active');
-    navbar1.classList.remove('active');
+window.onscroll = () => {
+  searchForm.classList.remove('active');
+  loginForm.classList.remove('active');
+  navbar1.classList.remove('active');
 }
 
 
 
 var swiper = new Swiper(".product-slider", {
-    loop:true,
-    spaceBetween: 20,
-   
-    autoplay: {
-        delay: 7500,
-        disableOnInteraction: false,
+  loop: true,
+  spaceBetween: 20,
+
+  autoplay: {
+    delay: 7500,
+    disableOnInteraction: false,
+  },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
     },
+    768: {
+      slidesPerView: 2,
 
-    breakpoints: {
-      0: {
-        slidesPerView: 1, 
-      },
-      768: {
-        slidesPerView: 2,
-       
-      },
-      1020: {
-        slidesPerView: 3,
-        
-      },
     },
-  });
+    1020: {
+      slidesPerView: 3,
 
-
-
-  var swiper = new Swiper(".review-slider", {
-    loop:true,
-    spaceBetween: 20,
-   
-    autoplay: {
-        delay: 7500,
-        disableOnInteraction: false,
     },
+  },
+});
 
-    breakpoints: {
-      0: {
-        slidesPerView: 1, 
-      },
-      768: {
-        slidesPerView: 2,
-       
-      },
-      1020: {
-        slidesPerView: 3,
-        
-      },
+
+
+var swiper = new Swiper(".review-slider", {
+  loop: true,
+  spaceBetween: 20,
+
+  autoplay: {
+    delay: 7500,
+    disableOnInteraction: false,
+  },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
     },
-  });
+    768: {
+      slidesPerView: 2,
+
+    },
+    1020: {
+      slidesPerView: 3,
+
+    },
+  },
+});
 
 // All Products logic
-  const boxContainer = document.querySelector(".box-container1");
-  const left = document.querySelector(".left");
-  const right = document.querySelector(".right");
-  const categoryHeading = document.querySelector(".categoryHeading");
-  // const cartContainer = document.querySelector(".cart-container");
-  // const cartSelector = document.querySelector(".cartSelector");
-  
+const boxContainer = document.querySelector(".box-container1");
+const left = document.querySelector(".left");
+const right = document.querySelector(".right");
+const categoryHeading = document.querySelector(".categoryHeading");
 
-  let allProducts = null;
-  let allData = null;
-  let filteredProducts = null;
-  let totalPage = null;
-  let page = 1;
-  
 
-  const fetchData = async()=>
-  {
+
+let allProducts = null;
+let allData = null;
+let filteredProducts = null;
+let totalPage = null;
+let page = 1;
+
+
+const fetchData = async () => {
   const params = new URLSearchParams(window.location.search);
   const category = params.get('category');
   const title = params.get('title');
 
-  console.log("category",category);
-  console.log("title",title);
-
-  if(category)
-  {
+  if (category) {
     categoryHeading.textContent = title;
   }
-  else
-  {
+  else {
     categoryHeading.innerHTML = "All Products";
   }
-    const data = await fetch(`/products.json`);
-    const json = await data.json();
-    console.log(json);
-    allData = json;
-    allProducts = json?.products;
-    // totalPage = Math.ceil(filteredProducts.length/10);
-    
-    
-    if (category) {
-      totalPage = 1;
-      renderCategoryProducts(category);
-    } else {
-      // alert('else');
-      totalPage = Math.ceil(allData?.total/10);
-      // console.log("filterd data page", totalPage);
-      renderProducts();
-      
-    }
+  const data = await fetch(`/products.json`);
+  const json = await data.json();
+  allData = json;
+  allProducts = json?.products;
 
-    Pagination();
-    // renderProducts();
-    setupCategoryFilters();
-    cart();
-  
+  if (category) {
+    totalPage = 1;
+    renderCategoryProducts(category);
+  } else {
+    totalPage = Math.ceil(allData?.total / 10);
+    renderProducts();
+
   }
 
-  const renderCategoryProducts = (category) => {
-    boxContainer.innerHTML = "";
-    filteredProducts = allProducts.filter(p => p.category === category);
-    totalPage = Math.ceil(filteredProducts.length/10);
-    let products = "";
-  
-    filteredProducts.map((p, index) => {
-      products += `<div class="box">
+  Pagination();
+  setupCategoryFilters();
+  cart();
+
+}
+
+const renderCategoryProducts = (category) => {
+  boxContainer.innerHTML = "";
+  filteredProducts = allProducts.filter(p => p.category === category);
+  totalPage = Math.ceil(filteredProducts.length / 10);
+  let products = "";
+
+  filteredProducts.map((p, index) => {
+    products += `<div class="box" id="searchCard">
         <img src="images/med${p?.id}.jpg" alt="">
         <h1>${p?.name}</h1>
         <div class="price">&#8377; ${p?.price}/-</div>
@@ -162,13 +145,13 @@ var swiper = new Swiper(".product-slider", {
         </div>
         <a href="#" class="btn cartListener" data-product-id="${p?.id}" >Add to cart</a>
       </div>`;
-    });
-  
-    boxContainer.innerHTML = products;
-    cart();
-  }
+  });
 
-  // Add event listeners for category buttons
+  boxContainer.innerHTML = products;
+  cart();
+}
+
+// Add event listeners for category buttons
 const setupCategoryFilters = () => {
   document.querySelector(".category-tablets").addEventListener('click', () => renderCategoryProducts('Medicine'));
   document.querySelector(".category-soap").addEventListener('click', () => renderCategoryProducts('Soap'));
@@ -176,27 +159,26 @@ const setupCategoryFilters = () => {
   document.querySelector(".category-chocolate").addEventListener('click', () => renderCategoryProducts('Chocolate'));
 }
 
-  fetchData();
+fetchData();
 
 
-  const handlePagination = (i)=>{
-    if(i>=1 && i<=totalPage && page != i)
-    {
-      page = i;
-    }
-    
-    
-    renderProducts();
-    Pagination();
+const handlePagination = (i) => {
+  if (i >= 1 && i <= totalPage && page != i) {
+    page = i;
   }
 
 
-const renderProducts = ()=>{
+  renderProducts();
+  Pagination();
+}
+
+
+const renderProducts = () => {
   let products = "";
 
-  allProducts.slice(10 * page -10, 10 * page)?.map((p, index)=>{
+  allProducts.slice(10 * page - 10, 10 * page)?.map((p, index) => {
     return (
-      products += `<div class="box">
+      products += `<div class="box" id="searchCard">
       <img src="images/med${p?.id}.jpg" alt="">
       <h1>${p?.name}</h1>
       <div class="price">&#8377; ${p?.price}/-</div>
@@ -213,30 +195,21 @@ const renderProducts = ()=>{
   cart();
 }
 
-const Pagination = ()=>
-{
-  
-  console.log(totalPage);
-  console.log("totalpages", totalPage);
-
+const Pagination = () => {
   const numbers = document.querySelector('.numbers');
- 
-  numbers.innerHTML = ""; 
 
-  for(let i=1; i<=totalPage; i++)
-  {
+  numbers.innerHTML = "";
+
+  for (let i = 1; i <= totalPage; i++) {
     const span = document.createElement("span");
     span.innerHTML = i;
-    console.log(span);
-    span.addEventListener('click',()=>handlePagination(i));
+    span.addEventListener('click', () => handlePagination(i));
     span.classList.add("spanEle");
-    if(page === i)
-    {
+    if (page === i) {
       span.classList.add("cuurentPage");
     }
     numbers.appendChild(span)
-    // toatlSpan += span;  
-    
+
   }
 
   if (page === 1) {
@@ -257,67 +230,88 @@ const Pagination = ()=>
 
 }
 
-left.addEventListener('click',()=>handlePagination(page-1));
-  
-right.addEventListener('click',()=>handlePagination(page+1));
+left.addEventListener('click', () => handlePagination(page - 1));
 
+right.addEventListener('click', () => handlePagination(page + 1));
 
-const handleAddToCart = (event)=>{
-  
+function showNotification(message) {
+  const notification = document.getElementById('notification');
+  notification.textContent = message; // Set the notification message
+
+  notification.classList.add('show');
+
+  // Hide the notification after 3 seconds
+  setTimeout(() => {
+    notification.classList.remove('show');
+  }, 3000);
+}
+
+const handleAddToCart = (event) => {
+
   event.preventDefault();
-  console.log('Entering Cart function');
+  showNotification("Item added to cart!");
   const productId = event.target.getAttribute('data-product-id');
-  alert(productId);
-  console.log(productId);
   let obj = {
     totalProduct: 0,
-    totalPrice : 0,
-    allItems : [],
+    totalPrice: 0,
+    allItems: [],
   }
   let presentItemIndex = null;
-  let cartStorage  = localStorage.getItem('cart')?JSON.parse(localStorage.getItem('cart')):obj;
-  console.log("cartStorage", cartStorage);
-  let productToCart = allProducts[Number(productId)-1];
-  console.log(productToCart);
+  let cartStorage = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : obj;
+  let productToCart = allProducts[Number(productId) - 1];
   let itemFlag = false;
-  cartStorage.allItems.map((item, index) => 
-  {
-    if(item.id == productId)
-      {
-        itemFlag = true;
-        presentItemIndex = index;
-      }
+  cartStorage.allItems.map((item, index) => {
+    if (item.id == productId) {
+      itemFlag = true;
+      presentItemIndex = index;
+    }
   }
   )
 
-  if(itemFlag)
-  {
+  if (itemFlag) {
     cartStorage.allItems[presentItemIndex].count += 1;
   }
-  else
-  {
+  else {
     cartStorage.allItems.push(productToCart);
   }
-  
-  console.log("cartStorage",cartStorage);
+
   cartStorage.totalProduct = cartStorage.totalProduct + 1;
   cartStorage.totalPrice = cartStorage.totalPrice + productToCart?.price;
-  console.log("object",obj);
   localStorage.setItem('cart', JSON.stringify(cartStorage));
-
-  console.log("Local storage get items", JSON.parse(localStorage.getItem('cart')));
 
 }
 
 //cart logic
-const cart =()=>{
-  document.querySelectorAll(".cartListener").forEach((item)=>{
-    item.addEventListener('click',handleAddToCart);
+const cart = () => {
+  document.querySelectorAll(".cartListener").forEach((item) => {
+    item.addEventListener('click', handleAddToCart);
   })
 
   // cartSelector.addEventListener('click', renderCartItems);
 }
 
+
+//serach function
+function searchFun() {
+  let myInput = document.querySelector(".myInput").value.toUpperCase();
+
+  let allrenderedCards = document.querySelectorAll("#searchCard");
+
+  for (let i = 0; i < allrenderedCards.length; i++) {
+    let nameTag = allrenderedCards[i].querySelector('h1');
+
+    let name = nameTag.textContent.toUpperCase();
+
+    if (name.indexOf(myInput) > -1) {
+      allrenderedCards[i].style.display = "";
+    }
+    else {
+      allrenderedCards[i].style.display = "none";
+    }
+
+  }
+
+}
 
 
 

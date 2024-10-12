@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartContainer = document.querySelector(".cart-container");
     const totalItem = document.querySelector(".totalItem");
     const itemCount = document.querySelector(".itemCount");
+    const notification = document.getElementById('notification');
 
     // If cart button is found, we're on index.html, set up the click event
     if (cartIcn) {
@@ -15,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to render cart items
     function renderCartItems() {
         const cartItems = JSON.parse(localStorage.getItem('cart')) || { allItems: [] };
-        console.log("cartItems", cartItems);
         totalItem.innerHTML = cartItems.totalProduct;
         itemCount.innerHTML = cartItems.totalPrice;
 
@@ -35,39 +35,35 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         } else {
             cartProducts = "<p>No items in cart.</p>";
-            if(cartItems.allItems.length == 0)
-                {
-                    cartItems.totalPrice = 0;
-                    cartItems.totalProduct = 0;
-                    localStorage.setItem('cart',JSON.stringify(cartItems));
-                    
-                }
-            
+            if (cartItems.allItems.length == 0) {
+                cartItems.totalPrice = 0;
+                cartItems.totalProduct = 0;
+                localStorage.setItem('cart', JSON.stringify(cartItems));
+
+            }
+
         }
 
-        console.log("Before cart items rendered ");
         cartContainer.innerHTML = cartProducts;
-        console.log("After cart items rendered ");
-        console.log("Number of .removeItem buttons:", document.querySelectorAll(".removeItem").length);
         removeCartItem();
-        console.log("After removeItem() ");
     }
 
     const removeCartItem = () => {
-        console.log("Entering removeItem");
         document.querySelectorAll(".removeItem").forEach((item) => {
             item.addEventListener('click', handleRemoveItem);
+
         })
     }
 
     //Remove Item logic
     const handleRemoveItem = (event) => {
         event.preventDefault();
-        console.log("Entering remove Item logic");
+        if (notification) {
+            showNotification("Item removed from cart!");
+        }
 
-        alert("Item Removed");
+        // alert("Item Removed");
         let cartItems = JSON.parse(localStorage.getItem('cart'));
-        console.log("cartItems", cartItems);
         let productId = event.target.getAttribute('data-product-id');
         let productCount = null;
         let productIndex = null;
@@ -81,10 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         )
-        
-        cartItems.totalPrice -=productPrice;
+
+        cartItems.totalPrice -= productPrice;
         cartItems.totalProduct -= 1;
-        // console.log("Product count: ",productCount);
         if (productCount > 1) {
             cartItems.allItems[productIndex].count -= 1;
 
@@ -95,9 +90,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         localStorage.setItem('cart', JSON.stringify(cartItems));
-        // let cartItems123456 = JSON.parse(localStorage.getItem('cart'));
-        // console.log(cartItems123456);
         renderCartItems();
+    }
+
+    // Function to show notification
+    function showNotification(message) {
+        notification.style.backgroundColor = "#ff6347";
+
+        notification.textContent = message; // Set the notification message
+
+        notification.classList.add('show');
+
+        // Hide the notification after 3 seconds
+        setTimeout(() => {
+            notification.classList.remove('show');
+        }, 3000);
     }
 
 

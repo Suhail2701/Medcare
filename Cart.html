@@ -34,26 +34,17 @@
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/> -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
-    <!-- <script>
-        function change_Value() {
-            var value = document.getElementById("lblCartCount");
-            var value_num = parseInt(value.innerHTML, 10);
-            document.getElementById("lblCartCount").innerHTML = value_num + 1;
-
-        }
-
-    </script> -->
 </head>
 
 <body>
 
     <!-- new header sec start  -->
     <header class="header">
-        <a href="#" class="logo"><i class="fa-solid fa-hospital"></i>&nbsp;&nbsp;Medcare</a>
-  
+        <a href="index.html" class="logo"><i class="fa-solid fa-hospital"></i>&nbsp;&nbsp;Medcare</a>
+
         <nav class="navbar">
-          <a href="index.html">Home</a>
-          <!-- <a href="#Features" id="abc">Features</a>
+            <a href="index.html">Home</a>
+            <!-- <a href="#Features" id="abc">Features</a>
           <a href="#Products">Products</a>
           <a href="#Categories">Categories</a>
           <a href="#About">About Us</a> 
@@ -61,54 +52,60 @@
           <a href="#Reviews">Reviews</a>
           <a href="Cart.html" id="cartbtn">Cart</a> -->
         </nav>
-  
+
         <div class="icon">
-          <div class="fa-solid fa-bars" id="menu-btn"></div>
-  
-          <div class="fa-solid fa-magnifying-glass" id="search-btn"></div>
-  
-          <a style="color: black;" class="cartIcn" id="cartbtn">
-            <div class="fa-solid fa-cart-shopping  " id="cart-btn"></div>
-          </a>
-  
-          <div class="fa-solid fa-user" id="login-btn"></div>
+            <div class="fa-solid fa-bars" id="menu-btn"></div>
+
+            <div class="fa-solid fa-magnifying-glass" id="search-btn"></div>
+
+            <a style="color: black;" class="cartIcn" id="cartbtn">
+                <div class="fa-solid fa-cart-shopping  " id="cart-btn"></div>
+            </a>
+
+            <div class="fa-solid fa-user" id="login-btn"></div>
         </div>
-  
+
         <!-- <div  >
           <button id="cartbtn" style="font-size: large;" onclick="window.location.href='Cart.html'">Cart</button>
         </div> -->
-  
+
         <form class="search-form">
             <input type="search" id="search-box" placeholder="Search Here....">
             <label for="search-box" class="fa-solid fa-magnifying-glass"></label>
         </form>
-  
+
         <form action="#llogin" class="login-form" id="Lf">
-          <h3> Login now</h3>
-          <input type="email" placeholder=" your email" class="box">
-          <input type="password" placeholder=" your password" class="box">
-          <p>Forget your password <a href="#">Click Here</a></p>
-          <p>Don't Have an Account <a href="signin.php">Create Now</a></p>
-          <input type="submit" value="Login Now" class="btn">
+            <h3> Login now</h3>
+            <input type="email" placeholder=" your email" class="box">
+            <input type="password" placeholder=" your password" class="box">
+            <p>Forget your password <a href="#">Click Here</a></p>
+            <p>Don't Have an Account <a href="signin.php">Create Now</a></p>
+            <input type="submit" value="Login Now" class="btn">
         </form>
-  
-      </header>
-    <!-- new header sec end  --> 
-  
+
+    </header>
+    <!-- new header sec end  -->
+
+    <!-- Notification container -->
+    <div id="notification" class="notification">
+        Item added to cart!
+    </div>
+
+
     <section class="p-list">
         <h1 class="heading " style="margin-top:12rem;"> <span> Cart </span></h1>
         <div class="cartTotal">
             <div class="cartTotal__item">
-                <span>Total Item  ----</span>
+                <span>Total Item ----</span>
                 <span class="totalItem">Item count</span>
             </div>
             <div class="cartTotal__item">
                 <span>Total Price ----</span>
-                <span class="itemCount" >Price</span>
+                <span class="itemCount">Price</span>
             </div>
         </div>
         <div class="box-container cart-container  ">
-            <div class="box">
+            <!-- <div class="box">
                 <img src="images/med5.jpg" alt="">
                 <h1>Tablets</h1>
                 <div class="price">&#8377; 500/-</div>
@@ -116,7 +113,7 @@
                     4.5 <i class="fa-solid fa-star"></i>
                 </div>
                 <a href="i.html" class="btn">Remove Item</a>
-            </div>
+            </div> -->
 
         </div>
     </section>

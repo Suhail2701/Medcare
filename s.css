@@ -236,7 +236,26 @@ body {
   font-size: large;
 }
 
-/* .viewCart
-{
-margin-left: auto ;
-} */
+/* Notification */
+/* Notification styling */
+.notification {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 100px;
+  right: 30px;
+  background-color: #4caf50; /* Green background */
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.notification.show {
+  display: block;
+  opacity: 1; /* Fade-in effect */
+}
+
